@@ -4,7 +4,6 @@
 # Copyright (c) 2006-2008, Juniper Networks, Inc.
 # All rights reserved.
 #
-#
 
 SDK_PKG_MAIN = ruby
 
@@ -23,4 +22,5 @@ chef-bundle:              ruby chef
 #
 MAKE_SDK_PKG = sdk
 MACHINE_IN_RELEASE_TAG = yes
+
 .include <pkg/sdk-pkg.mk>

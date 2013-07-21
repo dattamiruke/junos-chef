@@ -6,12 +6,15 @@
 #
 
 SUBDIR = \
-	libcrypto \
-	libiconv \
-	libssl \
-	libxml2 \
-	libyaml \
-	ruby \
-	gems
+  libcrypto \
+  libedit \
+  libiconv \
+  libssl \
+  libxml2 \
+  libyaml \
+  zlib \
+  ncurses \
+  ruby \
+  gems
 
 .include <bsd.subdir.mk>

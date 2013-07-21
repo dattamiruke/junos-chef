@@ -1,41 +1,65 @@
-#
-# $Id$
-#
+.include "../Makefile.inc"
 
-SUBDIR = \
-	big5 \
-	cp949 \
-	emacs_mule \
-	encdb \
-	euc_jp \
-	euc_kr \
-	euc_tw \
-	gb18030 \
-	gb2312 \
-	gbk \
-	iso_8859_1 \
-	iso_8859_10 \
-	iso_8859_11 \
-	iso_8859_13 \
-	iso_8859_14 \
-	iso_8859_15 \
-	iso_8859_16 \
-	iso_8859_2 \
-	iso_8859_3 \
-	iso_8859_4 \
-	iso_8859_5 \
-	iso_8859_6 \
-	iso_8859_7 \
-	iso_8859_8 \
-	iso_8859_9 \
-	koi8_r \
-	koi8_u \
-	shift_jis \
-	utf_16be \
-	utf_16le \
-	utf_32be \
-	utf_32le \
-	windows_1251
+.PATH: ${RUBY_DIR}/enc
 
-.include <bsd.subdir.mk>
+.ifndef SHLIB_NAME
 
+SRCS= \
+  ascii.c \
+  big5.c \
+  cp949.c \
+  emacs_mule.c \
+  encdb.c \
+  euc_jp.c \
+  euc_kr.c \
+  euc_tw.c \
+  gb18030.c \
+  gb2312.c \
+  gbk.c \
+  iso_8859_1.c \
+  iso_8859_10.c \
+  iso_8859_11.c \
+  iso_8859_13.c \
+  iso_8859_14.c \
+  iso_8859_15.c \
+  iso_8859_16.c \
+  iso_8859_2.c \
+  iso_8859_3.c \
+  iso_8859_4.c \
+  iso_8859_5.c \
+  iso_8859_6.c \
+  iso_8859_7.c \
+  iso_8859_8.c \
+  iso_8859_9.c \
+  koi8_r.c \
+  koi8_u.c \
+  shift_jis.c \
+  unicode.c \
+  us_ascii.c \
+  utf_16be.c \
+  utf_16le.c \
+  utf_32be.c \
+  utf_32le.c \
+  utf_8.c \
+  windows_1251.c
+
+SO_FILES=${SRCS:.c=.so}
+
+all: ${SRCS:.c=.so}
+
+clean: ${SRCS:.c=.clean}
+
+.for so in ${SO_FILES}
+${so}: $${.TARGET:R}.c
+	cd ${.CURDIR}; ${MAKE} LIB=${.TARGET:R} SHLIB_NAME=${.TARGET} SRCS=${.TARGET:R}.c
+
+${so:R}.clean:
+	cd ${.CURDIR}; ${MAKE} LIB=${.TARGET:R} SHLIB_NAME=${.TARGET} SRCS=${.TARGET:R}.c clean
+
+.endfor
+
+.else
+
+.include <bsd.lib.mk>
+
+.endif

@@ -788,7 +788,8 @@
 /* #undef WINT_T_SUFFIX */
 
 /* Define if the machine's byte ordering is little endian. */
-#define WORDS_LITTLEENDIAN 1
+/* move this to the Makefile */
+/* #define WORDS_LITTLEENDIAN 1 */
 
 /* Define to 1 if on MINIX. */
 /* #undef _MINIX */

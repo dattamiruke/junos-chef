@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id$ -->
+<!-- $Id: 582906-2-prog1.xsd,v 1.1.1.1 2012/10/30 16:41:58 roselynl Exp $ -->
 <xs:schema xmlns="http://example.com/xml/Prog1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified"

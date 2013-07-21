@@ -2,18 +2,21 @@
 # $Id$
 #
 
-# SHLIB_MAJOR = 1
-# SHLIB_MINOR = 0
-
-RUBY_DIR = ${SRCTOP}/dist/ruby-1.9.3-p194
+RUBY_DIR = ${SRCTOP}/dist/ruby-1.9.3-p392
 RUBY_EXT_DIR = ${RUBY_DIR}/ext
-XML4R_DIR = ${SRCTOP}/dist/xml4r-libxml-ruby-32bd511
+OPENSSL_SRC = ${SRCTOP}/dist/openssl-1.0.1c
+# XML4R_DIR = ${SRCTOP}/dist/xml4r-libxml-ruby-32bd511
 
 CFLAGS += \
-	-DRUBY_EXTCONF_H=\"extconf.h\" -fPIC \
-	-I${RUBY_DIR} -I${RUBY_DIR}/include \
-	-I${.CURDIR} -I${.CURDIR}/../ -I${SRCTOP}/lib/ruby/include
+  -fPIC \
+  -I${RUBY_DIR} -I${RUBY_DIR}/include \
+  -I${.CURDIR} -I${.CURDIR}/../ -I${SRCTOP}/lib/ruby/include \
+  -I${OPENSSL_SRC}/include
+
+.if ${MACHINE} == "powerpc" || ${MACHINE} == "xlr" || ${MACHINE} == "octeon"
+CFLAGS += -DWORDS_BIGENDIAN=1
+
+.endif
 
 SHLIB_LDFLAGS.${MACHINE} += \
-	-rdynamic -Wl,-rpath=${JUNOS_SDK_INSTALLDIR}/lib
-
+  -rdynamic -Wl,-rpath=${JUNOS_SDK_INSTALLDIR}/lib

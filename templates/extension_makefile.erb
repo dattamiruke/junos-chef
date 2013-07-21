@@ -13,7 +13,10 @@ EXT_DIR = ${SRCTOP}/<%= source_path %>
 .PATH: ${EXT_DIR}
 SRCS = <%= sources.join(" ") %>
 
-CFLAGS += -I${EXT_DIR}
+CFLAGS += \
+  -I${EXT_DIR}
+  -DHAVE_RUBY_RE_H=1
+  -DHAVE_RUBY_ENCODING_H=1
 
 DPLIBS += ${LIBM}
 

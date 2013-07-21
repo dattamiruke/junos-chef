@@ -8,6 +8,7 @@ require 'rubygems/dependency_installer'
 CLEAN.include('../tmp/*')
 CLEAN.include('dist/gems')
 CLEAN.include('lib/gems')
+CLEAN.include('../*-obj/ship/*.tgz')
 CLEAN.include('release/chef.manifest')
 CLOBBER.include('../*-obj')
 
@@ -124,10 +125,6 @@ task :manifest_gems => [:clean] do
           makefile.puts(makefile_content)
         end
 
-        # FIXME
-        extconf_path = Pathname.new("#{extension_build_root}/extconf.h")
-        extconf_path.open("w")
-
         # add manifest line for the native extension
         manifest_lines << "%TOPDIR%/#{extension_build_root}/#{extension_name}.so store=%INSTALLDIR%/lib/ruby/gems/1.9.1/gems/#{spec.name}-#{spec.version}/lib/#{relative_install_path}.so mode=444"
       end
@@ -191,9 +188,9 @@ end
 
 desc "build all the things"
 task :compile do
-  system "mk etc"
-  system "mk-powerpc lib"
-  system "mk-powerpc sbin"
+  system "mk etc" || raise
+  system "mk-powerpc lib" || raise
+  system "mk-powerpc sbin" || raise
 end
 
 desc "package all the things"

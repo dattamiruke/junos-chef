@@ -1,5 +1,5 @@
 #
-# $Id$
+# $Id: Makefile,v 1.2 2012/10/30 22:37:02 roselynl Exp $
 #
 # Copyright (c) 2009, Juniper Networks, Inc.
 # All rights reserved.
@@ -15,7 +15,7 @@ YAML_DIR = ${SRCTOP}/dist/yaml-0.1.4
 .PATH: ${YAML_DIR}/src
 SRCS = api.c dumper.c emitter.c loader.c parser.c reader.c scanner.c writer.c
 
-CFLAGS += -DHAVE_CONFIG_H -I${YAML_DIR} -I${YAML_DIR}/src
+CFLAGS += -DHAVE_CONFIG_H -I${YAML_DIR} -I${YAML_DIR}/src -I${.CURDIR}
 
 .include <bsd.lib.mk>
 

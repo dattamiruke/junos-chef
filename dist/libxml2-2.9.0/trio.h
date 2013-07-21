@@ -1,6 +1,6 @@
 /*************************************************************************
  *
- * $Id$
+ * $Id: trio.h,v 1.1.1.1 2012/10/30 16:41:55 roselynl Exp $
  *
  * Copyright (C) 1998 Bjorn Reese and Daniel Stenberg.
  *

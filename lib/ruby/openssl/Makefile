@@ -1,5 +1,5 @@
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 2012/10/30 16:42:08 roselynl Exp $
 #
 
 .include "../Makefile.inc"
@@ -7,7 +7,13 @@
 LIB = openssl
 SHLIB_NAME = ${LIB}.so
 
+OPENSSL_SRC = ${SRCTOP}/dist/openssl-1.0.1c
+
 .PATH: ${RUBY_EXT_DIR}/openssl
+CFLAGS += -DHAVE_HMAC_CTX_COPY -DHAVE_EVP_CIPHER_CTX_COPY \
+	  -DRUBY_EXTCONF_H=\"extconf.h\" \
+	  -I${OPENSSL_SRC}/include
+
 SRCS = \
 	openssl_missing.c ossl.c ossl_asn1.c ossl_bio.c ossl_bn.c \
 	ossl_cipher.c ossl_config.c ossl_digest.c ossl_engine.c \

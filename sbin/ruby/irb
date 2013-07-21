@@ -1,4 +1,4 @@
-#!/usr/bin/env /opt/sdk/juniper/bin/ruby
+#!/usr/bin/env ruby
 #
 #   irb.rb - interactive ruby
 #   	$Release Version: 0.9.6 $
