@@ -1,0 +1,23 @@
+example-deconstructor.o example-deconstructor.o: example-deconstructor.c \
+  ../include/yaml.h /usr/include/stdlib.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/stdio.h \
+  /usr/include/string.h /usr/include/strings.h
+
+../include/yaml.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/sys/_null.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/stdio.h:
+
+/usr/include/string.h:
+
+/usr/include/strings.h:

@@ -1,0 +1,24 @@
+#
+# $Id$
+#
+
+.include "../Makefile.inc"
+
+LIB = openssl
+SHLIB_NAME = ${LIB}.so
+
+.PATH: ${RUBY_EXT_DIR}/openssl
+SRCS = \
+	openssl_missing.c ossl.c ossl_asn1.c ossl_bio.c ossl_bn.c \
+	ossl_cipher.c ossl_config.c ossl_digest.c ossl_engine.c \
+	ossl_hmac.c ossl_ns_spki.c ossl_ocsp.c ossl_pkcs12.c \
+	ossl_pkcs5.c ossl_pkcs7.c ossl_pkey.c ossl_pkey_dh.c \
+	ossl_pkey_dsa.c ossl_pkey_ec.c ossl_pkey_rsa.c ossl_rand.c \
+	ossl_ssl.c ossl_ssl_session.c ossl_x509.c ossl_x509attr.c \
+	ossl_x509cert.c ossl_x509crl.c ossl_x509ext.c ossl_x509name.c \
+	ossl_x509req.c ossl_x509revoked.c ossl_x509store.c
+
+DPLIBS += ${LIBCRYPTO} ${LIBSSL} ${LIBCRYPT} ${LIBTHR} ${LIBM}
+
+.include <bsd.lib.mk>
+

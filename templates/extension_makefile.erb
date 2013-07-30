@@ -1,0 +1,20 @@
+#
+# Copyright (c) 2013, Opscode, Inc.
+# All rights reserved.
+#
+
+.include "${SRCTOP}/lib/ruby/Makefile.inc"
+
+LIB = <%= name %>
+SHLIB_NAME = ${LIB}.so
+
+EXT_DIR = ${SRCTOP}/<%= source_path %>
+
+.PATH: ${EXT_DIR}
+SRCS = <%= sources.join(" ") %>
+
+CFLAGS += -I${EXT_DIR}
+
+DPLIBS += ${LIBM}
+
+.include <bsd.lib.mk>

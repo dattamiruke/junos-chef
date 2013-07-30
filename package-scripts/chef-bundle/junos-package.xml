@@ -1,0 +1,11 @@
+<junos-package>
+  <type>SDK_PKG_BUNDLE</type>
+  <title>Chef bundle for Junos</title>
+  <copyright>
+    <year>%COPYRIGHT%</year>
+    <holder>Opscode</holder>
+    <reserve-rights/>
+  </copyright>
+  <release>%RELEASE%</release>
+  <description>This package contains Chef for Junos.</description>
+</junos-package>

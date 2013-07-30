@@ -1,0 +1,41 @@
+#
+# $Id$
+#
+# Copyright (c) 2009, Juniper Networks, Inc.
+# All rights reserved.
+#
+
+LIB = ssl
+
+SHLIB_MAJOR = 0
+SHLIB_MINOR = 9.8
+
+OPENSSL_SRC = ${SRCTOP}/dist/openssl-0.9.8r
+SSL_SRC = ${OPENSSL_SRC}/ssl
+CRYPTO_SRC = ${OPENSSL_SRC}/crypto
+
+.PATH: ${SSL_SRC}
+SRCS = \
+	s2_meth.c s2_srvr.c s2_clnt.c s2_lib.c s2_enc.c s2_pkt.c \
+	s3_meth.c s3_srvr.c s3_clnt.c s3_lib.c s3_enc.c s3_pkt.c s3_both.c \
+	s23_meth.c s23_srvr.c s23_clnt.c s23_lib.c s23_pkt.c t1_meth.c \
+	t1_srvr.c t1_clnt.c t1_lib.c t1_enc.c d1_meth.c d1_srvr.c \
+	d1_clnt.c d1_lib.c d1_pkt.c d1_both.c d1_enc.c ssl_lib.c ssl_err2.c \
+	ssl_cert.c ssl_sess.c ssl_ciph.c ssl_stat.c ssl_rsa.c ssl_asn1.c \
+	ssl_txt.c ssl_algs.c bio_ssl.c ssl_err.c kssl.c t1_reneg.c
+
+CFLAGS += \
+	-DOPENSSL_NO_HW -DOPENSSL_NO_GMP -DOPENSSL_NO_HW_GMP \
+	-DTERMIOS -DANSI_SOURCE -DOPENSSL_THREADS \
+	-DOPENSSL_NO_CAMELLIA -DOPENSSL_NO_CAPIENG -DOPENSSL_NO_CMS \
+	-DOPENSSL_NO_JPAKE -DOPENSSL_NO_MDC2 -DOPENSSL_NO_RC5 \
+	-DOPENSSL_NO_RFC3779 -DOPENSSL_NO_SEED -DOPENSSL_NO_ENGINE \
+	-I${OPENSSL_SRC} -I${SSL_SRC} -I${CRYPTO_SRC} \
+	-I${OBJTOP}/lib/libcrypto
+
+.if ${MACHINE} == "i386"
+CFLAGS += -DL_ENDIAN
+.endif
+
+.include <bsd.lib.mk>
+

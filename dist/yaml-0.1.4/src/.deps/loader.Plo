@@ -1,0 +1,38 @@
+loader.lo loader.o: loader.c yaml_private.h ../config.h ../include/yaml.h \
+  /usr/include/stdlib.h /usr/include/sys/cdefs.h /usr/include/sys/_null.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/stdio.h /usr/include/string.h /usr/include/strings.h \
+  /usr/include/assert.h /usr/include/limits.h /usr/include/sys/limits.h \
+  /usr/include/machine/_limits.h /usr/include/sys/syslimits.h
+
+yaml_private.h:
+
+../config.h:
+
+../include/yaml.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/sys/_null.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/stdio.h:
+
+/usr/include/string.h:
+
+/usr/include/strings.h:
+
+/usr/include/assert.h:
+
+/usr/include/limits.h:
+
+/usr/include/sys/limits.h:
+
+/usr/include/machine/_limits.h:
+
+/usr/include/sys/syslimits.h:

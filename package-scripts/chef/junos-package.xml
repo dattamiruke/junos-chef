@@ -1,0 +1,12 @@
+<junos-package>
+  <type>SDK_PKG_RE</type>
+  <title>Chef</title>
+  <copyright>
+    <year>%COPYRIGHT%</year>
+    <holder>Opscode</holder>
+    <reserve-rights/>
+  </copyright>
+  <release>%RELEASE%</release>
+  <description>This package contains Chef.</description>
+</junos-package>
+

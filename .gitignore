@@ -1,0 +1,10 @@
+tmp
+*.rbc
+*.o
+*.dylib
+*.bundle
+
+# these are all generated assets
+dist/gems
+lib/gems
+release/chef.manifest
