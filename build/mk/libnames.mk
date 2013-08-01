@@ -13,13 +13,13 @@ INCLUDES_libiconv = \
 LIBCRYPTO = ${OBJTOP}/lib/libcrypto/libcrypto.a
 INCLUDES_libcrypto = \
   -I${SRCTOP}/lib/libcrypto \
-  -I${SRCTOP}/dist/openssl-1.0.1c/include \
+  -I${SRCTOP}/dist/openssl-1.0.1e/include \
   -I${OBJTOP}/lib/libcrypto
 
 LIBSSL = ${OBJTOP}/lib/libssl/libssl.a
 INCLUDES_libssl = \
   -I${SRCTOP}/lib/libcrypto \
-  -I${SRCTOP}/dist/openssl-1.0.1c/include \
+  -I${SRCTOP}/dist/openssl-1.0.1e/include \
   -I${OBJTOP}/lib/libcrypto
 
 LIBXML2 = ${OBJTOP}/lib/libxml2/libxml2.a

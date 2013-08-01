@@ -8,9 +8,9 @@
 LIB = ssl
 
 SHLIB_MAJOR = 1
-SHLIB_MINOR = 0.1c
+SHLIB_MINOR = 0.1e
 
-OPENSSL_SRC = ${SRCTOP}/dist/openssl-1.0.1c
+OPENSSL_SRC = ${SRCTOP}/dist/openssl-1.0.1e
 SSL_SRC = ${OPENSSL_SRC}/ssl
 CRYPTO_SRC = ${OPENSSL_SRC}/crypto
 
