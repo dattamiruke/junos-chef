@@ -125,6 +125,19 @@ task :manifest_gems => [:clean] do
           makefile.puts(makefile_content)
         end
 
+        # create an extconf.h file for the extension
+        extconf_h_path = Pathname.new("#{extension_build_root}/extconf.h")
+        extconf_h_path.dirname.mkpath
+        extconf_h_path.open("w") do |makefile|
+          makefile.puts <<-EOH
+#ifndef EXTCONF_H
+#define EXTCONF_H
+#define HAVE_RUBY_RE_H 1
+#define HAVE_RUBY_ENCODING_H 1
+#endif
+          EOH
+        end
+
         # add manifest line for the native extension
         manifest_lines << "%TOPDIR%/#{extension_build_root}/#{extension_name}.so store=%INSTALLDIR%/lib/ruby/gems/1.9.1/gems/#{spec.name}-#{spec.version}/lib/#{relative_install_path}.so mode=444"
       end
