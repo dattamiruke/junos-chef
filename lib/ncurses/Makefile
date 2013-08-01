@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.2 2012/10/30 22:37:02 roselynl Exp $
+# $Id$
 #
 # Copyright (c) 2009, Juniper Networks, Inc.
 # All rights reserved.
@@ -18,7 +18,6 @@ NCURSES_TINFO = ${NCURSES_DIR}/ncurses/tinfo
 NCURSES_TRACE = ${NCURSES_DIR}/ncurses/trace
 
 .PATH: ${NCURSES_BASE}
-
 SRCS = \
     define_key.c  key_defined.c  keybound.c  keyok.c  legacy_coding.c  \
     lib_addch.c  lib_addstr.c  lib_beep.c  lib_bkgd.c  lib_box.c  lib_chgat.c  \
@@ -40,9 +39,8 @@ SRCS = \
     wresize.c
 #lib_mouse.c  sigaction.c
 
-CFLAGS += -DUSE_TERM_DRIVER -I${NCURSES_DIR}/include -I${NCURSES_DIR}/ncurses 
+CFLAGS += -DUSE_TERM_DRIVER -I${NCURSES_DIR}/include -I${NCURSES_DIR}/ncurses
 
 #-I${NCURSES_TTY} -I${NCURSES_BASE} -I${NCURSES_WCHAR} -I${NCURSES_TINFO} -I${NCURSES_TRACE}
 
 .include <bsd.lib.mk>
-

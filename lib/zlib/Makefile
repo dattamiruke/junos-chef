@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.2 2012/10/30 22:37:02 roselynl Exp $
+# $Id$
 #
 # Copyright (c) 2009, Juniper Networks, Inc.
 # All rights reserved.
@@ -34,4 +34,3 @@ SRCS = \
 CFLAGS += -DHAVE_CONFIG_H -I${ZLIB_DIR} -I${ZLIB_DIR} -I${.CURDIR}
 
 .include <bsd.lib.mk>
-
