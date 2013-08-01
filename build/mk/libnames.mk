@@ -27,6 +27,17 @@ INCLUDES_libxml2 = \
   -I${SRCTOP}/lib/libxml2 \
   -I${SRCTOP}/dist/libxml2-2.9.0/include
 
+LIBNCURSES = ${OBJTOP}/lib/ncurses/libncurses.a
+INCLUDES_libncurses = \
+  -I${SRCTOP}/lib/ncurses \
+  -I${SRCTOP}/dist/ncurses-5.9/include
+
+LIBEDIT = ${OBJTOP}/lib/libedit/libedit.a
+INCLUDES_libedit = \
+  -I${SRCTOP}/lib/libedit \
+  -I${SRCTOP}/dist/libedit-20120601-3.0/src
+DPLIBS_libedit = ${LIBNCURSES}
+
 SRC_libcrypto =
 SRC_libssl =
 
