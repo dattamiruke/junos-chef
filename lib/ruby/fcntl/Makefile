@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.1.1.1 2012/10/30 16:42:08 roselynl Exp $
+# $Id$
 #
 
 .include "../Makefile.inc"
@@ -11,4 +11,3 @@ SHLIB_NAME = ${LIB}.so
 SRCS = fcntl.c
 
 .include <bsd.lib.mk>
-

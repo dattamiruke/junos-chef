@@ -3,30 +3,37 @@
 #
 
 SUBDIR = \
-	bigdecimal \
-	syslog \
-	objspace \
-	fiber \
-	coverage \
-	zlib \
-	json \
-	date \
-	pty \
-	nkf \
-	pathname \
-	stringio \
-	ripper \
-	fcntl \
-	io \
-	syck \
-	iconv \
-	etc \
-	enc \
-	psych \
-	strscan \
-	openssl \
-	digest \
-	socket \
-	date
+  bigdecimal \
+  continuation \
+  coverage \
+  date \
+  dbm \
+  digest \
+  dl \
+  enc \
+  etc \
+  fcntl \
+  fiber \
+  iconv \
+  io \
+  json \
+  libxml \
+  mathn \
+  nkf \
+  objspace \
+  openssl \
+  pathname \
+  psych \
+  pty \
+  racc \
+  readline \
+  ripper \
+  sdbm \
+  socket \
+  stringio \
+  strscan \
+  syck \
+  syslog \
+  zlib
 
 .include <bsd.subdir.mk>

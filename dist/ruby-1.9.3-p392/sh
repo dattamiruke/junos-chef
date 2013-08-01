@@ -1,1 +1,0 @@
-cc -include ruby/config.h -include ruby/missing.h -DRUBY_EXPORT   -I.  -I.ext/include/i386-freebsd7.1 -I./include -I. -o proc.o proc.c

@@ -14,7 +14,6 @@ SRCS = date_parse.c \
        date_strptime.c \
        date_core.c
 
-CFLAGS +=  -include ${RUBY_EXT_DIR}/date/extconf.h
 DPLIBS += ${LIBM}
 
 .include <bsd.lib.mk>

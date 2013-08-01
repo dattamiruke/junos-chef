@@ -7,7 +7,7 @@
 
 PROG = ruby
 
-RUBY_SRC = ${SRCTOP}/dist/ruby-1.9.3-p392
+RUBY_SRC = ${SRCTOP}/dist/ruby-1.9.3-p448
 
 .PATH: ${RUBY_SRC}
 SRCS = \

@@ -71,9 +71,11 @@
 #define FUNC_FASTCALL(x) __attribute__ ((fastcall)) x
 #define RUBY_ALIAS_FUNCTION_TYPE(type, prot, name, args) type prot __attribute__((alias(#name)));
 #define RUBY_ALIAS_FUNCTION_VOID(prot, name, args) RUBY_ALIAS_FUNCTION_TYPE(void, prot, name, args)
+//#define HAVE_GCC_ATOMIC_BUILTINS 1
 #define RUBY_FUNC_EXPORTED __attribute__ ((visibility("default"))) extern
 #define HAVE_DECL_SYS_NERR 1
 #define HAVE_LIBCRYPT 1
+//#define HAVE_LIBRT 1
 #define HAVE_DIRENT_H 1
 #define HAVE__BOOL 1
 #define HAVE_STDBOOL_H 1
@@ -116,6 +118,7 @@
 #define HAVE_STRUCT_STAT_ST_ATIMESPEC 1
 #define HAVE_STRUCT_STAT_ST_MTIMESPEC 1
 #define HAVE_STRUCT_STAT_ST_CTIMESPEC 1
+#define HAVE_STRUCT_TIMEVAL 1
 #define HAVE_STRUCT_TIMESPEC 1
 #define HAVE_STRUCT_TIMEZONE 1
 #define HAVE_CLOCKID_T 1
@@ -248,6 +251,7 @@
 #define HAVE_SENDFILE 1
 #define HAVE_SIGALTSTACK 1
 #define VOID_UNSETENV 1
+//#define HAVE_DL_ITERATE_PHDR 1
 #define RUBY_SETJMP(env) _setjmp(env)
 #define RUBY_LONGJMP(env,val) _longjmp(env,val)
 #define RUBY_JMP_BUF jmp_buf
@@ -275,12 +279,15 @@
 #define HAVE_PTHREAD_SIGMASK 1
 #define HAVE_GETCONTEXT 1
 #define HAVE_SETCONTEXT 1
+//#define CANNOT_FORK_WITH_PTHREAD 1
 #define USE_ELF 1
 #define DLEXT_MAXLEN 3
 #define DLEXT ".so"
 #define HAVE_PTHREAD_H 1
 #define RUBY_LIB_VERSION_STYLE 3  /* full */
+//#define RUBY_EXEC_PREFIX "/opt/sdk/juniper"
 #define RUBY_LIB_PREFIX RUBY_EXEC_PREFIX"/lib/ruby"
 #define RUBY_SITE_LIB RUBY_LIB_PREFIX"/site_ruby"
 #define RUBY_VENDOR_LIB RUBY_LIB_PREFIX"/vendor_ruby"
+#define RUBY_PLATFORM "i386-freebsd7.1"
 #endif /* INCLUDE_RUBY_CONFIG_H */

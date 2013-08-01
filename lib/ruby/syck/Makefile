@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.1.1.1 2012/10/30 16:42:08 roselynl Exp $
+# $Id$
 #
 
 .include "../Makefile.inc"
@@ -16,4 +16,3 @@ SRCS = \
 CFLAGS += -I${RUBY_EXT_DIR}/syck
 
 .include <bsd.lib.mk>
-
