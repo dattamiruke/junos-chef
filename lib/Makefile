@@ -7,13 +7,13 @@
 
 SUBDIR = \
   libcrypto \
-  libedit \
   libiconv \
   libssl \
   libxml2 \
   libyaml \
   zlib \
   ncurses \
+  libedit \
   ruby \
   gems
 

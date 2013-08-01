@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.2 2012/10/30 22:37:02 roselynl Exp $
+# $Id$
 #
 # Copyright (c) 2009, Juniper Networks, Inc.
 # All rights reserved.
@@ -7,13 +7,12 @@
 
 LIB = edit
 
-SHLIB_MAJOR = 2
+SHLIB_MAJOR = 3
 SHLIB_MINOR = 0
 
 EDIT_DIR = ${SRCTOP}/dist/libedit-20120601-3.0
 
 .PATH: ${EDIT_DIR}/src
-
 
 SRCS = \
 	chared.c \
@@ -45,8 +44,13 @@ SRCS = \
 	wcsdup.c
 	#vi.c \
 
-CFLAGS += -DWIDECHAR 
+CFLAGS += -DWIDECHAR
 CFLAGS += -D__STDC_ISO_10646__ -DHAVE_CONFIG_H -I${EDIT_DIR} \
 	  -I${.CURDIR} -I${EDIT_DIR}/src
-.include <bsd.lib.mk>
 
+DPLIBS += ${LIBNCURSES}
+
+SHLIB_LDFLAGS.${MACHINE} += \
+  -rdynamic -Wl,-rpath=${JUNOS_SDK_INSTALLDIR}/lib
+
+.include <bsd.lib.mk>
