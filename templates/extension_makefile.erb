@@ -18,6 +18,14 @@ CFLAGS += \
   -DHAVE_RUBY_RE_H=1
   -DHAVE_RUBY_ENCODING_H=1
 
-DPLIBS += ${LIBM}
+DPLIBS += \
+  ${LIBTHR} \
+  ${LIBM} \
+  ${LIBCRYPTO} \
+  ${LIBSSL} \
+  ${LIBYAML} \
+  ${LIBXML2} \
+  ${LIBNCURSES} \
+  ${LIBEDIT}
 
 .include <bsd.lib.mk>
