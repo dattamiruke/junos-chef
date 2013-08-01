@@ -42,6 +42,10 @@
 # endif
 #endif
 
+/* Junos SDK Customization */
+#undef HAVE_CRYPTODEV
+/* Junos SDK END */
+
 #ifndef HAVE_CRYPTODEV
 
 void
