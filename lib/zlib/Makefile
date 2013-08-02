@@ -10,7 +10,7 @@ LIB = zlib
 SHLIB_MAJOR = 1
 SHLIB_MINOR = 2.8
 
-ZLIB_DIR = ${SRCTOP}/dist/zlib-1.2.8
+ZLIB_DIR = ${SRCTOP}/dist/zlib-1.2.6
 
 .PATH: ${ZLIB_DIR}
 
