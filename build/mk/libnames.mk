@@ -25,7 +25,7 @@ INCLUDES_libssl = \
 LIBXML2 = ${OBJTOP}/lib/libxml2/libxml2.a
 INCLUDES_libxml2 = \
   -I${SRCTOP}/lib/libxml2 \
-  -I${SRCTOP}/dist/libxml2-2.9.0/include
+  -I${SRCTOP}/dist/libxml2-2.7.8/include
 
 LIBNCURSES = ${OBJTOP}/lib/ncurses/libncurses.a
 INCLUDES_libncurses = \
