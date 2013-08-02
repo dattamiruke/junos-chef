@@ -9,8 +9,13 @@
 ################################
 
 %TOPDIR%/sbin/ruby/ruby store=%INSTALLDIR%/bin/ruby mode=555 program_id=1 no_strip
-%TOPDIR%/sbin/ruby/irb store=%INSTALLDIR%/bin/irb mode=555 program_id=2
-%TOPDIR%/sbin/ruby/gem store=%INSTALLDIR%/bin/gem mode=555 program_id=3
+%TOPDIR%/$RUBY_SRC/bin/erb store=%INSTALLDIR%/bin/erb mode=555 program_id=2
+%TOPDIR%/$RUBY_SRC/bin/gem store=%INSTALLDIR%/bin/gem mode=555 program_id=3
+%TOPDIR%/$RUBY_SRC/bin/irb store=%INSTALLDIR%/bin/irb mode=555 program_id=4
+%TOPDIR%/$RUBY_SRC/bin/rake store=%INSTALLDIR%/bin/rake mode=555 program_id=5
+%TOPDIR%/$RUBY_SRC/bin/rdoc store=%INSTALLDIR%/bin/rdoc mode=555 program_id=6
+%TOPDIR%/$RUBY_SRC/bin/ri store=%INSTALLDIR%/bin/ri mode=555 program_id=7
+%TOPDIR%/$RUBY_SRC/bin/testrb store=%INSTALLDIR%/bin/testrb mode=555 program_id=8
 
 ################################
 # Shared libraries
