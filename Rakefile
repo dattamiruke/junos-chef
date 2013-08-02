@@ -40,7 +40,7 @@ task :manifest_gems => [:clean] do
     # program_id is a number ranging from 0 to 63 and increasing with each
     # binary added to the manifest. The number must be unique among all
     # programs with a given package ID
-    program_id_index = 1
+    program_id_index = 0
 
     manifest_lines = []
     # first line contains the package_id
@@ -161,26 +161,18 @@ task :manifest_gems => [:clean] do
     manifest_lines << "######## EXECUTABLES ########"
     specs_with_executables.each do |spec|
       spec.executables.each do |executable|
+        puts "       > #{executable}"
 
-        [
-          "gems/#{spec.name}-#{spec.version}/#{spec.bindir}", # Add a line for the gem-level bindir
-          "bin" # Add a line for the top-level Rubygems bindir
-        ].each do |bindir|
+        # Add a line for the gem-level bindir
+        executable_path = "gems/#{spec.name}-#{spec.version}/#{spec.bindir}/#{executable}"
+        manifest_line = "%TOPDIR%/#{gem_install_dir}/#{executable_path} store=%INSTALLDIR%/lib/ruby/gems/1.9.1/#{executable_path} mode=555 program_id=#{program_id_index += 1}"
+        manifest_lines << manifest_line
 
-          executable_path = "#{bindir}/#{executable}"
-          puts "       > #{gem_install_dir}/#{executable_path}"
-
-          manifest_line = "%TOPDIR%/#{gem_install_dir}/#{executable_path} store=%INSTALLDIR%/lib/ruby/gems/1.9.1/#{executable_path}"
-
-          # make it executable
-          manifest_line << " mode=555"
-          # append a program_id to the binary
-          manifest_line << " program_id=#{program_id_index}"
-          # increment program_id
-          program_id_index += 1
-
-          manifest_lines << manifest_line
-        end
+        # Add a line for the top-level Rubygems bindir, we'll install
+        # this one at the main sbin directory for the package
+        executable_path = "bin/#{executable}"
+        manifest_line = "%TOPDIR%/#{gem_install_dir}/#{executable_path} store=%INSTALLDIR%/bin/#{executable} mode=555 program_id=#{program_id_index += 1}"
+        manifest_lines << manifest_line
       end
 
     end
