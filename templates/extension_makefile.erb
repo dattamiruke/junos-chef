@@ -20,12 +20,9 @@ CFLAGS += \
 
 DPLIBS += \
   ${LIBTHR} \
-  ${LIBM} \
-  ${LIBCRYPTO} \
-  ${LIBSSL} \
-  ${LIBYAML} \
-  ${LIBXML2} \
-  ${LIBNCURSES} \
-  ${LIBEDIT}
+  ${LIBM}
+
+SHLIB_LDFLAGS.${MACHINE} += \
+  -rdynamic -Wl,-rpath=${JUNOS_SDK_INSTALLDIR}/lib
 
 .include <bsd.lib.mk>
