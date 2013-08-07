@@ -1,6 +1,4 @@
 #
-# $Id$
-#
 # Copyright (c) 2006-2007, Juniper Networks, Inc.
 # All rights reserved.
 #
@@ -16,7 +14,7 @@
 .ifndef __sdk_libnames__
 __sdk_libnames__ = 1
 
-# this is where to find our own ddl files, and also where to 
+# this is where to find our own ddl files, and also where to
 # find Juniper-provided ones
 INCLUDES_ddl = -I${RELOBJTOP}/lib/ddl -I${RELSRCTOP_JUNOS}/lib/ddl
 INCLUDES_odl = -I${RELOBJTOP}/lib/odl -I${RELSRCTOP_JUNOS}/lib/odl

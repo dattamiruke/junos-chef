@@ -1,3 +1,20 @@
+#
+# Copyright:: Copyright (c) 2013 Opscode, Inc.
+# License:: Apache License, Version 2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 require 'erb'
 require 'ostruct'
 require 'pathname'
@@ -123,19 +140,6 @@ task :manifest_gems => [:clean] do
         ext_makefile_path.dirname.mkpath
         ext_makefile_path.open("w") do |makefile|
           makefile.puts(makefile_content)
-        end
-
-        # create an extconf.h file for the extension
-        extconf_h_path = Pathname.new("#{extension_build_root}/extconf.h")
-        extconf_h_path.dirname.mkpath
-        extconf_h_path.open("w") do |makefile|
-          makefile.puts <<-EOH
-#ifndef EXTCONF_H
-#define EXTCONF_H
-#define HAVE_RUBY_RE_H 1
-#define HAVE_RUBY_ENCODING_H 1
-#endif
-          EOH
         end
 
         # add manifest line for the native extension

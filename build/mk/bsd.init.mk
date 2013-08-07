@@ -1,4 +1,3 @@
-# $Id$
 #
 # Copyright (c) 2006-2009, Juniper Networks, Inc.
 # All rights reserved.

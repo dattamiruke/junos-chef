@@ -1,8 +1,18 @@
 #
-# $Id$
+# Copyright:: Copyright (c) 2013 Opscode, Inc.
+# License:: Apache License, Version 2.0
 #
-# Copyright (c) 2006-2007, Juniper Networks, Inc.
-# All rights reserved.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 #
 
 # This is the top-level makefile for the juniper sdk examples that are
@@ -18,7 +28,7 @@
 .if make(hostuilibs)
 SUBDIR ?= lib
 .else
-SUBDIR?= etc lib sbin 
+SUBDIR?= etc lib sbin
 .endif
 
 # include the system subdirectory makefile which does the work
@@ -40,11 +50,11 @@ sdk-version:
 release: .PHONY ${SDK_MACHINE_LIST:%=build_arch.%}
 	(cd ${_CURDIR}/release && ${.MAKE})
 
-# 'mk hosttools' will build just the buildhost-targeted tools.  
+# 'mk hosttools' will build just the buildhost-targeted tools.
 HOSTTOOLS?= etc/certs
 
 hosttools:
 	cd ${.CURDIR} && ${HOSTTOOL_ENV} ${.MAKE} HOSTPROG=yes SUBDIR="${HOSTTOOLS}"
 
-# 'mk hostuilibs' will build just the hostprog version of DDL/ODL libs for UI simulator 
+# 'mk hostuilibs' will build just the hostprog version of DDL/ODL libs for UI simulator
 hostuilibs: _SUBDIR
