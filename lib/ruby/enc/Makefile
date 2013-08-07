@@ -60,6 +60,8 @@ ${so:R}.clean:
 
 .else
 
+CFLAGS += -DONIG_ENC_REGISTER=rb_enc_register
+
 .include <bsd.lib.mk>
 
 .endif
