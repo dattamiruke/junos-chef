@@ -63,3 +63,8 @@ ${so:R}.clean:
 .include <bsd.lib.mk>
 
 .endif
+
+SUBDIR = \
+	trans
+
+.include <bsd.subdir.mk>

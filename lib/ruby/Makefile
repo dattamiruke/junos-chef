@@ -11,6 +11,7 @@ SUBDIR = \
   digest \
   dl \
   enc \
+  enc_trans \
   etc \
   fcntl \
   fiber \

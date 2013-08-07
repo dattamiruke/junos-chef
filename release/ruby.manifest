@@ -33,7 +33,6 @@
 # Ruby Extensions
 ################################
 
-%TOPDIR%/lib/ruby/enc/ascii.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/ascii.so mode=444
 %TOPDIR%/lib/ruby/enc/big5.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/big5.so mode=444
 %TOPDIR%/lib/ruby/enc/cp949.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/cp949.so mode=444
 %TOPDIR%/lib/ruby/enc/emacs_mule.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/emacs_mule.so mode=444
@@ -62,14 +61,32 @@
 %TOPDIR%/lib/ruby/enc/koi8_r.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/koi8_r.so mode=444
 %TOPDIR%/lib/ruby/enc/koi8_u.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/koi8_u.so mode=444
 %TOPDIR%/lib/ruby/enc/shift_jis.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/shift_jis.so mode=444
-%TOPDIR%/lib/ruby/enc/unicode.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/unicode.so mode=444
-%TOPDIR%/lib/ruby/enc/us_ascii.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/us_ascii.so mode=444
 %TOPDIR%/lib/ruby/enc/utf_16be.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/utf_16be.so mode=444
 %TOPDIR%/lib/ruby/enc/utf_16le.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/utf_16le.so mode=444
 %TOPDIR%/lib/ruby/enc/utf_32be.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/utf_32be.so mode=444
 %TOPDIR%/lib/ruby/enc/utf_32le.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/utf_32le.so mode=444
-%TOPDIR%/lib/ruby/enc/utf_8.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/utf_8.so mode=444
 %TOPDIR%/lib/ruby/enc/windows_1251.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/windows_1251.so mode=444
+
+%TOPDIR%/lib/ruby/enc/trans/transdb.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/transdb.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/big5.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/big5.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/chinese.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/chinese.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/emoji.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/emoji.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/emoji_iso2022_kddi.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/emoji_iso2022_kddi.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/emoji_sjis_docomo.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/emoji_sjis_docomo.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/emoji_sjis_kddi.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/emoji_sjis_kddi.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/emoji_sjis_softbank.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/emoji_sjis_softbank.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/escape.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/escape.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/gb18030.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/gb18030.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/gbk.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/gbk.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/iso2022.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/iso2022.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/japanese.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/japanese.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/japanese_euc.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/japanese_euc.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/japanese_sjis.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/japanese_sjis.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/korean.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/korean.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/single_byte.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/single_byte.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/transdb.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/transdb.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/utf8_mac.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/utf8_mac.so mode=444
+%TOPDIR%/lib/ruby/enc/trans/utf_16_32.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/enc/trans/utf_16_32.so mode=444
 
 %TOPDIR%/lib/ruby/psych/psych.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/psych.so mode=444
 %TOPDIR%/lib/ruby/pathname/pathname.so store=%INSTALLDIR%/lib/$RUBY_LIBPATH/pathname.so mode=444
