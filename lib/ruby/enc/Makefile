@@ -5,43 +5,40 @@
 .ifndef SHLIB_NAME
 
 SRCS= \
-  ascii.c \
-  big5.c \
-  cp949.c \
-  emacs_mule.c \
-  encdb.c \
-  euc_jp.c \
-  euc_kr.c \
-  euc_tw.c \
-  gb18030.c \
-  gb2312.c \
-  gbk.c \
-  iso_8859_1.c \
-  iso_8859_10.c \
-  iso_8859_11.c \
-  iso_8859_13.c \
-  iso_8859_14.c \
-  iso_8859_15.c \
-  iso_8859_16.c \
-  iso_8859_2.c \
-  iso_8859_3.c \
-  iso_8859_4.c \
-  iso_8859_5.c \
-  iso_8859_6.c \
-  iso_8859_7.c \
-  iso_8859_8.c \
-  iso_8859_9.c \
-  koi8_r.c \
-  koi8_u.c \
-  shift_jis.c \
-  unicode.c \
-  us_ascii.c \
-  utf_16be.c \
-  utf_16le.c \
-  utf_32be.c \
-  utf_32le.c \
-  utf_8.c \
-  windows_1251.c
+	big5.c \
+	cp949.c \
+	emacs_mule.c \
+	encdb.c \
+	euc_jp.c \
+	euc_kr.c \
+	euc_tw.c \
+	gb2312.c \
+	gb18030.c \
+	gbk.c \
+	iso_8859_1.c \
+	iso_8859_2.c \
+	iso_8859_3.c \
+	iso_8859_4.c \
+	iso_8859_5.c \
+	iso_8859_6.c \
+	iso_8859_7.c \
+	iso_8859_8.c \
+	iso_8859_9.c \
+	iso_8859_10.c \
+	iso_8859_11.c \
+	iso_8859_13.c \
+	iso_8859_14.c \
+	iso_8859_15.c \
+	iso_8859_16.c \
+	koi8_r.c \
+	koi8_u.c \
+	shift_jis.c \
+	utf_16be.c \
+	utf_16le.c \
+	utf_32be.c \
+	utf_32le.c \
+	utf_8.c \
+	windows_1251.c
 
 SO_FILES=${SRCS:.c=.so}
 

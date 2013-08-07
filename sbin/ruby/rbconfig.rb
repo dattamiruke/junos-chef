@@ -13,7 +13,7 @@ module RbConfig
   CONFIG["MAJOR"] = "1"
   CONFIG["MINOR"] = "9"
   CONFIG["TEENY"] = "1"
-  CONFIG["PATCHLEVEL"] = "392"
+  CONFIG["PATCHLEVEL"] = "448"
   CONFIG["INSTALL"] = '/usr/bin/install -c'
   CONFIG["EXEEXT"] = ""
   CONFIG["prefix"] = (TOPDIR || DESTDIR + "/opt/sdk/juniper")
