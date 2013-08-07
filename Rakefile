@@ -27,6 +27,7 @@ CLEAN.include('dist/gems')
 CLEAN.include('lib/gems')
 CLEAN.include('../*-obj/ship/*.tgz')
 CLEAN.include('release/chef.manifest')
+CLEAN.include('release/netconf.manifest')
 CLOBBER.include('../*-obj')
 
 GEM_SOURCE_ROOT = "dist/gems"
@@ -47,7 +48,8 @@ task :manifest_gems => [:clean] do
   package_id_index = 2
 
   {
-    "chef" => :latest
+    "chef" => :latest,
+    "netconf" => :latest
   }.each_pair do |gem_name, gem_version|
 
     # create a sandboxed gem repository for this gem and it's deps

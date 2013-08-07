@@ -15,23 +15,4 @@
 # limitations under the License.
 #
 
-SDK_PKG_MAIN = ruby
-
-#
-# Package targets
-#
-
-ruby:                     SDK_PKG_RE
-chef:                     SDK_PKG_RE
-netconf:                  SDK_PKG_RE
-
-chef-bundle:              SDK_PKG_BUNDLE
-chef-bundle:              ruby chef netconf
-
-#
-# The magic:
-#
-MAKE_SDK_PKG = sdk
-MACHINE_IN_RELEASE_TAG = yes
-
-.include <pkg/sdk-pkg.mk>
+.include "../Makefile.inc"

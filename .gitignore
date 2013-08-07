@@ -12,3 +12,4 @@ tmp
 dist/gems
 lib/gems
 release/chef.manifest
+release/netconf.manifest
