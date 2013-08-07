@@ -33,6 +33,9 @@ CLOBBER.include('../*-obj')
 GEM_SOURCE_ROOT = "dist/gems"
 GEM_BUILD_ROOT = "lib/gems"
 
+# Force Nogogiri to compile against system libxml2/libxslt
+ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = "true"
+
 desc "download and generate a manifest for a Rubygem"
 task :manifest_gems => [:clean] do
 

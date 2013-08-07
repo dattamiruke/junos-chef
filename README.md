@@ -100,6 +100,15 @@ make install clean; rehash
 cd /usr/ports/ftp/curl
 make install clean; rehash
 
+# Install libxml2
+wget -O /usr/ports/distfiles/gnome2/libxml2-2.6.32.tar.gz http://xmlsoft.org/sources/old/libxml2-2.6.32.tar.gz
+cd /usr/ports/textproc/libxml2
+make install clean; rehash
+
+# Install libxslt
+cd /usr/ports/textproc/libxslt
+make install clean; rehash
+
 # Update CA
 wget -O /etc/ssl/cert.pem http://curl.haxx.se/ca/cacert.pem
 cp /usr/local/share/curl/curl-ca-bundle.crt /usr/local/share/curl/curl-ca-bundle.crt.old
