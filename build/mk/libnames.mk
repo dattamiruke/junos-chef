@@ -27,6 +27,11 @@ INCLUDES_libxml2 = \
   -I${SRCTOP}/lib/libxml2 \
   -I${SRCTOP}/dist/libxml2-2.7.8/include
 
+LIBXSLT = ${OBJTOP}/lib/libxslt/libxslt.a
+INCLUDES_libxslt = \
+  -I${SRCTOP}/lib/libxslt \
+  -I${SRCTOP}/dist/libxslt-1.1.24
+
 LIBNCURSES = ${OBJTOP}/lib/ncurses/libncurses.a
 INCLUDES_libncurses = \
   -I${SRCTOP}/lib/ncurses \

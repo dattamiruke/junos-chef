@@ -16,15 +16,16 @@
 #
 
 SUBDIR = \
-  libcrypto \
-  libiconv \
-  libssl \
-  libxml2 \
-  libyaml \
-  zlib \
-  ncurses \
-  libedit \
-  ruby \
-  gems
+	libcrypto \
+	libiconv \
+	libssl \
+	libxml2 \
+	libxslt \
+	libyaml \
+	zlib \
+	ncurses \
+	libedit \
+	ruby \
+	gems
 
 .include <bsd.subdir.mk>

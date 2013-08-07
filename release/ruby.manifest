@@ -38,13 +38,16 @@
 # Shared libraries
 ################################
 
-%TOPDIR%/lib/libssl/libssl.so.1 store=%INSTALLDIR%/lib/libssl.so.1 mode=444
 %TOPDIR%/lib/libcrypto/libcrypto.so.1 store=%INSTALLDIR%/lib/libcrypto.so.1 mode=444
-%TOPDIR%/lib/libyaml/libyaml.so.2 store=%INSTALLDIR%/lib/libyaml.so.2 mode=444
-%TOPDIR%/lib/libiconv/libiconv.so.1 store=%INSTALLDIR%/lib/libiconv.so.1 mode=444
-%TOPDIR%/lib/zlib/libzlib.so.1 store=%INSTALLDIR%/lib/libzlib.so.1 mode=444
 %TOPDIR%/lib/libedit/libedit.so.3 store=%INSTALLDIR%/lib/libedit.so.3 mode=444
+%TOPDIR%/lib/libiconv/libiconv.so.1 store=%INSTALLDIR%/lib/libiconv.so.1 mode=444
+%TOPDIR%/lib/libssl/libssl.so.1 store=%INSTALLDIR%/lib/libssl.so.1 mode=444
+%TOPDIR%/lib/libxml2/libxml2.so.2 store=%INSTALLDIR%/lib/libxml2.so.2 mode=444
+%TOPDIR%/lib/libxslt/libxslt.so.1 store=%INSTALLDIR%/lib/libxslt.so.1 mode=444
+%TOPDIR%/lib/libyaml/libyaml.so.2 store=%INSTALLDIR%/lib/libyaml.so.2 mode=444
 %TOPDIR%/lib/ncurses/libncurses.so.2 store=%INSTALLDIR%/lib/libncurses.so.2 mode=444
+%TOPDIR%/lib/zlib/libzlib.so.1 store=%INSTALLDIR%/lib/libzlib.so.1 mode=444
+
 
 ################################
 # Ruby Extensions
