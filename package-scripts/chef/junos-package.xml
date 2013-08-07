@@ -7,6 +7,5 @@
     <reserve-rights/>
   </copyright>
   <release>%RELEASE%</release>
-  <description>This package contains Chef.</description>
+  <description>This package contains the Chef gem along with it's dependencies.</description>
 </junos-package>
-
