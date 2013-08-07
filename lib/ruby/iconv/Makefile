@@ -7,9 +7,12 @@
 LIB = iconv
 SHLIB_NAME = ${LIB}.so
 
-.PATH: ${RUBY_EXT_DIR}/iconv
+.PATH: ${RUBY_EXT_DIR}/${LIB}
+SRCS = ${LIB}.c
 
-SRCS = iconv.c
+CFLAGS += \
+	-DSIGNEDNESS_OF_SIZE_T="+1" \
+	-DHAVE_ICONVLIST
 
 DPLIBS += ${LIBICONV}
 

@@ -6,7 +6,6 @@ RUBY_DIR = ${SRCTOP}/dist/ruby-1.9.3-p448
 RUBY_EXT_DIR = ${RUBY_DIR}/ext
 
 CFLAGS += \
-  -DRUBY_EXTCONF_H=\"extconf.h\" \
   -fPIC \
   -I${RUBY_DIR} \
   -I${RUBY_DIR}/include \

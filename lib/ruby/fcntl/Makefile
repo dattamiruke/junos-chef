@@ -7,7 +7,7 @@
 LIB = fcntl
 SHLIB_NAME = ${LIB}.so
 
-.PATH: ${RUBY_EXT_DIR}/fcntl
-SRCS = fcntl.c
+.PATH: ${RUBY_EXT_DIR}/${LIB}
+SRCS = ${LIB}.c
 
 .include <bsd.lib.mk>

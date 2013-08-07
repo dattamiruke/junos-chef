@@ -7,8 +7,8 @@
 LIB = digest
 SHLIB_NAME = ${LIB}.so
 
-.PATH: ${RUBY_EXT_DIR}/digest
-SRCS = digest.c
+.PATH: ${RUBY_EXT_DIR}/${LIB}
+SRCS = ${LIB}.c
 
 SUBDIR = \
 	bubblebabble \

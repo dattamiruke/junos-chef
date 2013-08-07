@@ -7,8 +7,12 @@
 LIB = generator
 SHLIB_NAME = ${LIB}.so
 
-.PATH: ${RUBY_EXT_DIR}/json/generator
-SRCS = generator.c
+.PATH: ${RUBY_EXT_DIR}/json/${LIB}
+SRCS = ${LIB}.c
+
+CFLAGS += \
+	-DHAVE_RUBY_RE_H \
+	-DHAVE_RUBY_ENCODING_H
 
 DPLIBS += ${LIBM}
 

@@ -10,6 +10,8 @@ SHLIB_NAME = ${LIB}.so
 .PATH: ${RUBY_EXT_DIR}/digest/bubblebabble
 SRCS = bubblebabble.c
 
-CFLAGS += -I${RUBY_EXT_DIR}/digest
+CFLAGS += \
+	-I${RUBY_EXT_DIR}/digest \
+	-DHAVE_CONFIG_H
 
 .include <bsd.lib.mk>

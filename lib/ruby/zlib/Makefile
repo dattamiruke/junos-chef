@@ -7,8 +7,13 @@
 LIB = zlib
 SHLIB_NAME = ${LIB}.so
 
-.PATH: ${RUBY_EXT_DIR}/zlib
-SRCS = zlib.c
+.PATH: ${RUBY_EXT_DIR}/${LIB}
+SRCS = ${LIB}.c
+
+CFLAGS += \
+	-DHAVE_ZLIB_H \
+	-DHAVE_CRC32_COMBINE \
+	-DHAVE_ADLER32_COMBINE
 
 DPLIBS += ${LIBZ}
 
