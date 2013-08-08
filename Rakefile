@@ -33,6 +33,11 @@ CLOBBER.include('../*-obj')
 GEM_SOURCE_ROOT = "dist/gems"
 GEM_BUILD_ROOT = "lib/gems"
 
+# Make the Chef and Netconf versions configurable. By default the
+# latest version will be installed
+CHEF_VERSION = ENV['CHEF_VERSION'] || "latest"
+NETCONF_VERSION = ENV['NETCONF_VERSION'] || "latest"
+
 # Force Nogogiri to compile against system libxml2/libxslt
 ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = "true"
 
@@ -51,8 +56,8 @@ task :manifest_gems => [:clean] do
   package_id_index = 2
 
   {
-    "chef" => :latest,
-    "netconf" => :latest
+    "chef" => CHEF_VERSION,
+    "netconf" => NETCONF_VERSION
   }.each_pair do |gem_name, gem_version|
 
     # create a sandboxed gem repository for this gem and it's deps
