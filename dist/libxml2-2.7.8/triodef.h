@@ -92,6 +92,9 @@
 #  endif
 #  if (__STDC_VERSION__ >= 199901L)
 #   define TRIO_COMPILER_SUPPORTS_C99
+/* Junos SDK Customization */
+#   undef TRIO_COMPILER_SUPPORTS_C99
+/* Junos SDK END */
 #  endif
 # elif defined(TRIO_COMPILER_SUNPRO)
 #  if (__SUNPRO_C >= 0x420)
