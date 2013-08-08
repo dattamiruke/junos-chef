@@ -19,12 +19,12 @@ SUBDIR = \
 	libcrypto \
 	libiconv \
 	libssl \
-	libxml2 \
-	libxslt \
-	libyaml \
 	zlib \
 	ncurses \
 	libedit \
+	libxml2 \
+	libxslt \
+	libyaml \
 	ruby \
 	gems
 
