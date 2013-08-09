@@ -1,11 +1,11 @@
 <junos-package>
   <type>SDK_PKG_RE</type>
-  <title>Netconf</title>
+  <title>junos-ez-stdlib</title>
   <copyright>
     <year>%COPYRIGHT%</year>
     <holder>Juniper</holder>
     <reserve-rights/>
   </copyright>
   <release>%RELEASE%</release>
-  <description>This package contains the Netconf gem along with it's dependencies.</description>
+  <description>This package contains the Junos EZ Stdlib gem along with it's dependencies.</description>
 </junos-package>

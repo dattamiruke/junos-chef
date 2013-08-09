@@ -23,10 +23,10 @@ SDK_PKG_MAIN = ruby
 
 ruby:                     SDK_PKG_RE
 chef:                     SDK_PKG_RE
-netconf:                  SDK_PKG_RE
+junos-ez-stdlib:          SDK_PKG_RE
 
 chef-bundle:              SDK_PKG_BUNDLE
-chef-bundle:              ruby chef netconf
+chef-bundle:              ruby chef junos-ez-stdlib
 
 #
 # The magic:

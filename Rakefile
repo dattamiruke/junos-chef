@@ -27,16 +27,16 @@ CLEAN.include('dist/gems')
 CLEAN.include('lib/gems')
 CLEAN.include('../*-obj/ship/*.tgz')
 CLEAN.include('release/chef.manifest')
-CLEAN.include('release/netconf.manifest')
+CLEAN.include('release/junos-ez-stdlib.manifest')
 CLOBBER.include('../*-obj')
 
 GEM_SOURCE_ROOT = "dist/gems"
 GEM_BUILD_ROOT = "lib/gems"
 
-# Make the Chef and Netconf versions configurable. By default the
+# Make the Chef and Junos EZ Stdlib versions configurable. By default the
 # latest version will be installed
 CHEF_VERSION = ENV['CHEF_VERSION'] || "latest"
-NETCONF_VERSION = ENV['NETCONF_VERSION'] || "latest"
+JUNOS_EZ_STDLIB_VERSION = ENV['JUNOS_EZ_STDLIB_VERSION'] || "latest"
 
 # Force Nogogiri to compile against system libxml2/libxslt
 ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = "true"
@@ -57,7 +57,7 @@ task :manifest_gems => [:clean] do
 
   {
     "chef" => CHEF_VERSION,
-    "netconf" => NETCONF_VERSION
+    "junos-ez-stdlib" => JUNOS_EZ_STDLIB_VERSION
   }.each_pair do |gem_name, gem_version|
 
     # create a sandboxed gem repository for this gem and it's deps
