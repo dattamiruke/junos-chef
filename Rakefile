@@ -197,6 +197,9 @@ task :manifest_gems => [:clean] do
     File.open(manifest_path, "w") do |manifest|
       manifest.puts(manifest_lines.join("\n"))
     end
+
+    # iterate the package id index
+    package_id_index += 1
   end
 
   # Write out a Makefile for all gems
