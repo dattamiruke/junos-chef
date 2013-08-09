@@ -6,7 +6,7 @@
 #define HAVE_LIBM 1
 #define HAVE_ISINF /**/
 /* #undef HAVE_ISNAN */
-#define HAVE_LIBHISTORY 1/**/
+/* #undef HAVE_LIBHISTORY */
 /* #undef HAVE_LIBREADLINE */
 #define HAVE_LIBPTHREAD /**/
 #define HAVE_PTHREAD_H /**/

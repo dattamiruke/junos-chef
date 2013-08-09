@@ -81,8 +81,7 @@ CFLAGS += \
 DPLIBS += \
 	${LIBZ} \
 	${LIBM} \
-	${LIBICONV} \
-	${LIBEDIT}
+	${LIBICONV}
 
 SHLIB_LDFLAGS.${MACHINE} += \
   -rdynamic -Wl,-rpath=${JUNOS_SDK_INSTALLDIR}/lib
