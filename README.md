@@ -126,6 +126,18 @@ tar xzvf git-1.8.3.3.tar.gz
 cd git-1.8.3.3
 ./configure --prefix=/usr/local --enable-pthreads=-pthread --with-openssl=/usr/local --with-curl=/usr/local
 gmake install clean; rehash
+
+# Configure NTP
+cat <<'EOL' >> /etc/ntp.conf
+driftfile /var/db/ntp.drift
+
+server 0.pool.ntp.org
+server 1.pool.ntp.org
+server 2.pool.ntp.org
+server 3.pool.ntp.org
+'EOL'
+
+echo 'ntpd_enable="YES"' >> /etc/rc.conf
 ```
 
 ### Ruby 1.9.3 (via rbenv)
