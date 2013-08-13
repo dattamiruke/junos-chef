@@ -24,22 +24,32 @@ directory:
 git clone git@github.com:opscode/junos-chef.git /usr/tmp/chef/src
 ```
 
-## Usage
+## Usage/Tasks
 
-### Build
+### Package
 
-The `build` task:
+For each gem to be packaged up (currently [Chef](https://github.com/opscode/chef) and [Junos EZ Stdlib](https://github.com/jeremyschulman/ruby-junos-ez-stdlib)) 
+the task:
 
-* Pulls down a specific version of Chef from Rubygems.org (along with 
-all gem dependencies).
-* Dynamically generates a release manifest Chef.
+* Git clones a specific version and builds a `*.gem` file. The version 
+can be designated using the `CHEF_GIT_REV` and `JUNOS_EZ_STDLIB_GIT_REV` 
+environment variables and should be valid "git-ish" version (SHA, tag or 
+branch name).
+* Installs the gem (and it's dependencies) into a temporary, isolated gem 
+repository.
+* Creates the required Makefiles/directory structure to compile all 
+native extensions with the Junos SDK.
+* Dynamically generates a Junos SDK release manifest for the gem (and it's dependencies).
+
+Next the normal Junos SDK build workflow takes over:
+
 * Compiles all libraries and binaries (i.e. Ruby and friends).
 * Generates a signed Chef Junos bundle which contains a package for Ruby 
-and Chef.
+and all top-level gems.
 
 ```shell
 cd /usr/tmp/chef/src
-rake build
+rake package
 ```
 
 ### Clean/Clobber
