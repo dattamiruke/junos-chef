@@ -10,6 +10,6 @@ tmp
 
 # these are all generated assets
 dist/gems
-lib/gems
+lib/gems/*/*
 release/chef.manifest
 release/junos-ez-stdlib.manifest
