@@ -167,7 +167,7 @@ class PackageGem
     # from the Rubygems.org API
     dep = gem_file_path ? gem_file_path : Gem::Dependency.new(name, nil)
 
-    # HAX - Force Nogogiri to compile against system libxml2/libxslt
+    # HAX - Force Nokogiri to compile against system libxml2/libxslt
     ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = "true"
 
     installer_opts = {
@@ -176,8 +176,6 @@ class PackageGem
     }
     installer = Gem::DependencyInstaller.new(installer_opts)
 
-    # record installed specs for later processing
-    # TODO - Just read the spec files to determine this
     installer.install(dep)
   end
 
