@@ -63,13 +63,13 @@ task :package do
   end
 
   # Compile all the things
-  system "mk etc" || raise
-  system "mk-powerpc lib" || raise
-  system "mk-powerpc sbin" || raise
+  system("mk etc") || raise
+  system("mk-powerpc lib") || raise
+  system("mk-powerpc sbin") || raise
 
   # Package all the things
   Dir.chdir "release" do
-    system "mk-powerpc chef-bundle"
+    system("mk-powerpc chef-bundle") || raise
   end
 end
 
