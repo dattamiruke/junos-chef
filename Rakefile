@@ -82,6 +82,7 @@ require 'ostruct'
 require 'pathname'
 require 'rubygems/dependency'
 require 'rubygems/dependency_installer'
+require 'rubygems/builder'
 require 'rubygems/specification'
 require 'tempfile'
 
@@ -152,7 +153,8 @@ class PackageGem
     Dir.chdir(src_dir) do
       # clean up previous gems
       FileUtils.rm_r(Dir.glob("*.gem"))
-      system "gem build #{@name}.gemspec"
+      spec = Gem::Specification.load("#{@name}.gemspec")
+      Gem::Builder.new(spec).build
     end
   end
 
