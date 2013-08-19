@@ -32,8 +32,8 @@ GEMS_TO_PACKAGE = [
   },
   {
     :name => "junos-ez-stdlib",
-    :source => "https://github.com/jeremyschulman/ruby-junos-ez-stdlib.git",
-    :version => ENV['JUNOS_EZ_STDLIB_GIT_REV'] || "ex_l2ng"
+    :source => "https://github.com/Juniper/ruby-junos-ez-stdlib.git",
+    :version => ENV['JUNOS_EZ_STDLIB_GIT_REV'] || "v0.2.0_20130819_1"
   }
 ]
 
