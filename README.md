@@ -24,6 +24,22 @@ directory:
 git clone git@github.com:opscode/junos-chef.git /usr/tmp/chef/src
 ```
 
+Finally install all required gems using Bundler:
+
+```shell
+gem install bundler
+bundle install
+```
+
+You can verify everything is configure correctly with a simple `rake -T`:
+
+```shell
+$ rake -T
+rake clean    # Remove any temporary products.
+rake clobber  # Remove any generated file.
+rake package  # package all the things
+```
+
 ## Usage/Tasks
 
 ### Package
