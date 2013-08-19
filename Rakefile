@@ -78,6 +78,7 @@ end
 ########################################################################
 
 require 'erb'
+require 'mixlib/versioning'
 require 'ostruct'
 require 'pathname'
 require 'rubygems/dependency'
@@ -137,6 +138,10 @@ class PackageGem
     File.join(gem_repo_dir, "gems", "#{spec.name}-#{spec.version}")
   end
 
+  def env_var_friendly_name
+    name.gsub("-", "_").upcase
+  end
+
   ################################################
   # Git clone gem source
   ################################################
@@ -155,6 +160,16 @@ class PackageGem
       FileUtils.rm_r(Dir.glob("*.gem"))
       spec = Gem::Specification.load("#{@name}.gemspec")
       Gem::Builder.new(spec).build
+
+      # Export SemVer compliant version string
+      env_var_name = "#{env_var_friendly_name}_VERSION"
+      banner "#{name}: Exporting SemVer compliant version string under '#{env_var_name}' environment variable."
+      git_describe_output = %x{ git describe }
+      if v = Mixlib::Versioning.parse(git_describe_output)
+        ENV[env_var_name] = v.to_semver_string
+      else
+        banner "#{name}: Could not parse SemVer compliant version string from git describe output '#{git_describe_output.chomp}'"
+      end
     end
   end
 
