@@ -48,8 +48,6 @@ CFLAGS += \
 
 .if ${MACHINE} == "i386"
 CFLAGS += -DL_ENDIAN
-.elif ${MACHINE} == "powerpc" || ${MACHINE} == "xlr" || ${MACHINE} == "octeon"
-CFLAGS += -DB_ENDIAN
 .endif
 
 .include <bsd.lib.mk>

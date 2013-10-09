@@ -27,10 +27,5 @@ CFLAGS += \
   -I${SRCTOP}/lib/ruby/include \
   -I${OPENSSL_SRC}/include
 
-.if ${MACHINE} == "powerpc" || ${MACHINE} == "xlr" || ${MACHINE} == "octeon"
-CFLAGS += -DWORDS_BIGENDIAN=1
-
-.endif
-
 SHLIB_LDFLAGS.${MACHINE} += \
   -rdynamic -Wl,-rpath=${JUNOS_SDK_INSTALLDIR}/lib

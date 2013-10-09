@@ -363,9 +363,6 @@ CFLAGS += \
 
 .if ${MACHINE} == "i386"
 CFLAGS += -DDATA_ORDER_IS_LITTLE_ENDIAN
-.elif ${MACHINE} == "powerpc" || ${MACHINE} == "xlr" || ${MACHINE} == "octeon"
-CFLAGS += -DDATA_ORDER_IS_BIG_ENDIAN
-#SRCS += ecp_nistp224.c ecp_nistp256.c ecp_nistp521.c
 .endif
 
 DPLIBS += ${LIBM}
