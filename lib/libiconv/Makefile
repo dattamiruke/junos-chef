@@ -28,10 +28,6 @@ SRCS = iconv.c relocatable.c
 .PATH: ${LIBICONV_DIR}/libcharset/lib
 SRCS += localcharset.c
 
-.if ${MACHINE} == "powerpc" || ${MACHINE} == "xlr" || ${MACHINE} == "octeon"
-CFLAGS += -DWORDS_BIGENDIAN=1
-.endif
-
 CFLAGS += \
 	-I${LIBICONV_DIR}/lib \
 	-DHAVE_CONFIG_H \

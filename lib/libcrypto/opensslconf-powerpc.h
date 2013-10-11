@@ -4,36 +4,32 @@
 /* OpenSSL was configured with the following options: */
 #ifndef OPENSSL_DOING_MAKEDEPEND
 
-
+/* Disabled by default in OpenSSL 1.0.1e */
 #ifndef OPENSSL_NO_CAMELLIA
 # define OPENSSL_NO_CAMELLIA
 #endif
-#ifndef OPENSSL_NO_CAPIENG
-# define OPENSSL_NO_CAPIENG
-#endif
+/* Disabled by default in OpenSSL 1.0.1e */
 #ifndef OPENSSL_NO_CMS
 # define OPENSSL_NO_CMS
 #endif
-#ifndef OPENSSL_NO_GMP
-# define OPENSSL_NO_GMP
+/* Disabled by default in OpenSSL 1.0.1e */
+#ifndef OPENSSL_NO_SEED
+# define OPENSSL_NO_SEED
 #endif
+/* jpake is marked experimental in OpenSSL 1.0.1e */
 #ifndef OPENSSL_NO_JPAKE
 # define OPENSSL_NO_JPAKE
 #endif
+/* libgmp is not in the FreeBSD base system. */
+#ifndef OPENSSL_NO_GMP
+# define OPENSSL_NO_GMP
+#endif
+/* The Kerberos 5 support is MIT-specific. */
 #ifndef OPENSSL_NO_KRB5
 # define OPENSSL_NO_KRB5
 #endif
-#ifndef OPENSSL_NO_MDC2
-# define OPENSSL_NO_MDC2
-#endif
-#ifndef OPENSSL_NO_RC5
-# define OPENSSL_NO_RC5
-#endif
 #ifndef OPENSSL_NO_RFC3779
 # define OPENSSL_NO_RFC3779
-#endif
-#ifndef OPENSSL_NO_SEED
-# define OPENSSL_NO_SEED
 #endif
 
 #endif /* OPENSSL_DOING_MAKEDEPEND */
@@ -103,12 +99,12 @@
 #endif
 
 /* Generate 80386 code? */
-#define I386_ONLY
+#undef I386_ONLY
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/usr/local/ssl/lib/engines"
-#define OPENSSLDIR "/usr/local/ssl"
+#define ENGINESDIR "/usr/lib/engines"
+#define OPENSSLDIR "/etc/ssl"
 #endif
 #endif
 
@@ -154,13 +150,17 @@
 /* If this is set to 'unsigned int' on a DEC Alpha, this gives about a
  * %20 speed up (longs are 8 bytes, int's are 4). */
 #ifndef DES_LONG
-#define DES_LONG unsigned long
+#define DES_LONG unsigned int
 #endif
 #endif
 
 #if defined(HEADER_BN_H) && !defined(CONFIG_HEADER_BN_H)
 #define CONFIG_HEADER_BN_H
+#ifdef __powerpc64__
+#undef BN_LLONG
+#else
 #define BN_LLONG
+#endif
 
 /* Should we define BN_DIV2W here? */
 
@@ -168,9 +168,14 @@
 /* The prime number generation stuff may not work when
  * EIGHT_BIT but I don't care since I've only used this mode
  * for debuging the bignum libraries */
+#ifdef __powerpc64__
+#define SIXTY_FOUR_BIT_LONG
+#undef THIRTY_TWO_BIT
+#else
 #undef SIXTY_FOUR_BIT_LONG
-#undef SIXTY_FOUR_BIT
 #define THIRTY_TWO_BIT
+#endif
+#undef SIXTY_FOUR_BIT
 #undef SIXTEEN_BIT
 #undef EIGHT_BIT
 #endif
@@ -226,7 +231,7 @@ YOU SHOULD NOT HAVE BOTH DES_RISC1 AND DES_RISC2 DEFINED!!!!!
    even newer MIPS CPU's, but at the moment one size fits all for
    optimization options.  Older Sparc's work better with only UNROLL, but
    there's no way to tell at compile time what it is you're running on */
- 
+
 #if defined( sun )		/* Newer Sparc's */
 #  define DES_PTR
 #  define DES_RISC1
@@ -250,7 +255,7 @@ YOU SHOULD NOT HAVE BOTH DES_RISC1 AND DES_RISC2 DEFINED!!!!!
 #  define DES_PTR
 #  define DES_RISC2
 #  define DES_UNROLL
-#elif defined(i386) || defined(__i386__)	/* x86 boxes, should be gcc */
+#elif defined( i386 )		/* x86 boxes, should be gcc */
 #  define DES_PTR
 #  define DES_RISC1
 #  define DES_UNROLL
