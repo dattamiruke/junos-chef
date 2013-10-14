@@ -1,5 +1,5 @@
 <junos-package>
-  <type>SDK_PKG_RE</type>
+  <type>SDK_PKG_UNIX</type>
   <title>Chef</title>
   <copyright>
     <year>%COPYRIGHT%</year>
@@ -7,5 +7,6 @@
     <reserve-rights/>
   </copyright>
   <release>%RELEASE%</release>
+  <api-version>%JUNOS_UNIX_SDK_API_VERSION%</api-version>
   <description>This package contains the Chef gem along with it's dependencies.</description>
 </junos-package>

@@ -33,28 +33,3 @@ SUBDIR?= etc lib sbin
 
 # include the system subdirectory makefile which does the work
 .include <bsd.subdir.mk>
-
-# set the default rules for build_arch.${MACHINE} and for release
-BUILD_ARCH_USE: .USE
-	@echo "[Building targets for MACHINE=${.TARGET:E} ...]"
-	(cd ${_CURDIR} && MACHINE=${.TARGET:E} MACHINE_ARCH=${MACHINE_ARCH.${.TARGET:E}} ${.MAKE})
-
-SDK_MACHINE_LIST = i386 xlr octeon powerpc
-${SDK_MACHINE_LIST:%=build_arch.%}: BUILD_ARCH_USE
-
-.PHONY: sdk-version
-sdk-version:
-	@echo "SDK version: ${JUNOS_SDK_VERSION_MAJOR}.${JUNOS_SDK_VERSION_MINOR}"
-
-# 'mk release' will build the package for installation on a JUNOS router
-release: .PHONY ${SDK_MACHINE_LIST:%=build_arch.%}
-	(cd ${_CURDIR}/release && ${.MAKE})
-
-# 'mk hosttools' will build just the buildhost-targeted tools.
-HOSTTOOLS?= etc/certs
-
-hosttools:
-	cd ${.CURDIR} && ${HOSTTOOL_ENV} ${.MAKE} HOSTPROG=yes SUBDIR="${HOSTTOOLS}"
-
-# 'mk hostuilibs' will build just the hostprog version of DDL/ODL libs for UI simulator
-hostuilibs: _SUBDIR

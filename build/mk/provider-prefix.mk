@@ -9,4 +9,3 @@ __provider_prefix_mk__ = 1
 PROVIDER_PREFIX != ${EXTRACT_PROV_PREFIX} ${SIGCERT}
 
 .endif
-

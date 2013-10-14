@@ -11,4 +11,3 @@ CRRDL_PATH += ${LIBRRDL:H:H:S,${OBJTOP_JUNOS},${HOST_OBJTOP_JUNOS},}/input
 .endif
 
 .include "${SB_BACKING_SB}/src/build/mk/jnx.rrdl.mk"
-
