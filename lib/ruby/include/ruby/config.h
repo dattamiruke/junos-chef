@@ -285,7 +285,7 @@
 #define DLEXT ".so"
 #define HAVE_PTHREAD_H 1
 #define RUBY_LIB_VERSION_STYLE 3  /* full */
-//#define RUBY_EXEC_PREFIX "/opt/sdk/juniper"
+//#define RUBY_EXEC_PREFIX "/opt/sdk/opscode"
 #define RUBY_LIB_PREFIX RUBY_EXEC_PREFIX"/lib/ruby"
 #define RUBY_SITE_LIB RUBY_LIB_PREFIX"/site_ruby"
 #define RUBY_VENDOR_LIB RUBY_LIB_PREFIX"/vendor_ruby"
