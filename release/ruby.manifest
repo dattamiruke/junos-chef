@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-/set package_id=1
+/set package_id=1 role=Provider_Daemon
 
 %EVAL% RUBY_SRC=dist/ruby-1.9.3-p448
 %EVAL% RUBY_PATH=ruby/1.9.1
