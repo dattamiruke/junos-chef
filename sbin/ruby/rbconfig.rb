@@ -16,7 +16,7 @@ module RbConfig
   CONFIG["PATCHLEVEL"] = "448"
   CONFIG["INSTALL"] = '/usr/bin/install -c'
   CONFIG["EXEEXT"] = ""
-  CONFIG["prefix"] = (TOPDIR || DESTDIR + "/opt/sdk/juniper")
+  CONFIG["prefix"] = (TOPDIR || DESTDIR + "/opt/sdk/opscode")
   CONFIG["ruby_install_name"] = "ruby"
   CONFIG["RUBY_INSTALL_NAME"] = "ruby"
   CONFIG["RUBY_SO_NAME"] = "ruby"
@@ -32,7 +32,7 @@ module RbConfig
   CONFIG["rubyhdrdir"] = "$(includedir)/$(RUBY_BASE_NAME)-$(ruby_version)"
   CONFIG["UNIVERSAL_INTS"] = ""
   CONFIG["UNIVERSAL_ARCHNAMES"] = ""
-  CONFIG["configure_args"] = " '--disable-install-doc' '--with-static-linked-ext' '--prefix=/opt/sdk/juniper'"
+  CONFIG["configure_args"] = " '--disable-install-doc' '--with-static-linked-ext' '--prefix=/opt/sdk/opscode'"
   CONFIG["vendordir"] = "$(rubylibprefix)/vendor_ruby"
   CONFIG["sitedir"] = "$(rubylibprefix)/site_ruby"
   CONFIG["ruby_version"] = "1.9.1"

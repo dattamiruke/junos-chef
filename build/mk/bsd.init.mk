@@ -7,17 +7,15 @@
 .ifndef __sdk_init__
 __sdk_init__ = 1
 
+# VBE can create /usr/local/etc/junos-make.conf to redefine $TMPDIR
+.-include "/usr/local/etc/junos-make.conf"
+
 JUNOS_SDK_BUILD_ENV = yes
 
 NEED_IMPLICIT_LDADD ?= yes
 
 # we define this symbol to make sure we get the right includes
 CFLAGS += -D__JUNOS_SDK__
-.if defined (NEED_JUNOS_MP_SDK)
-CFLAGS += -D__JUNOS_MP_SDK__
-.else
-CFLAGS += -D__JUNOS_RE_SDK__
-.endif
 
 CFLAGS += \
 	-I${RELSRCTOP}/include \
@@ -30,7 +28,6 @@ HOST_CFLAGS += -D__JUNOS_SDK__
 # this is where to find our own ddl directories
 # (do this *before* the juniper init)
 SDK_DDL_INC := ${RELSRCTOP_JUNOS}/lib/ddl
-SDK_ODL_INC := ${RELSRCTOP_JUNOS}/lib/odl
 SDK_RRDL_INC := ${RELSRCTOP_JUNOS}/lib/rrdl
 
 .include <provider-prefix.mk>

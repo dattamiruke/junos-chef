@@ -1,12 +1,12 @@
 <junos-package>
-    <type>SDK_PKG_RE</type>
-    <title>Ruby Interpreter</title>
-    <copyright>
-	<year>%COPYRIGHT%</year>
-	<holder>SDK Your Net Corp</holder>
-	<reserve-rights/>
-    </copyright>
-    <release>%RELEASE%</release>
-    <description>
-This package contains Ruby Interpreter.</description>
+  <type>SDK_PKG_UNIX</type>
+  <title>Ruby Interpreter</title>
+  <copyright>
+    <year>%COPYRIGHT%</year>
+    <holder>Opscode</holder>
+    <reserve-rights/>
+  </copyright>
+  <release>%RELEASE%</release>
+  <api-version>%JUNOS_UNIX_SDK_API_VERSION%</api-version>
+  <description>This package contains the Ruby 1.9.3 Interpreter.</description>
 </junos-package>

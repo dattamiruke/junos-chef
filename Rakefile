@@ -258,7 +258,7 @@ class PackageGem
 
     manifest_lines = []
     # first line contains the package_id
-    manifest_lines << "/set package_id=#{package_id_index}"
+    manifest_lines << "/set package_id=#{package_id_index} role=Provider_Daemon"
 
     ##############################################
     # Process Standard Gem Files

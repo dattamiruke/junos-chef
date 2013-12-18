@@ -21,9 +21,9 @@ SDK_PKG_MAIN = ruby
 # Package targets
 #
 
-ruby:                     SDK_PKG_RE
-chef:                     SDK_PKG_RE
-junos-ez-stdlib:          SDK_PKG_RE
+ruby:                     SDK_PKG_UNIX
+chef:                     SDK_PKG_UNIX
+junos-ez-stdlib:          SDK_PKG_UNIX
 
 chef-bundle:              SDK_PKG_BUNDLE
 chef-bundle:              ruby chef junos-ez-stdlib
