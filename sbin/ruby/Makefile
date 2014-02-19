@@ -105,7 +105,7 @@ warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long 
 CFLAGS += \
 	-fvisibility=hidden \
 	-DRUBY_EXPORT \
-	-DRUBY_EXEC_PREFIX="\"/opt/sdk/opscode\"" \
+	-DRUBY_EXEC_PREFIX="\"${JUNOS_SDK_INSTALLDIR}"\" \
 	${optflags} \
 	${debugflags} \
 	${warnflags} \
