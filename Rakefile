@@ -28,7 +28,7 @@ GEMS_TO_PACKAGE = [
   {
     :name => "chef",
     :source => "https://github.com/opscode/chef.git",
-    :version => ENV["CHEF_GIT_REV"] || "11.8.2"
+    :version => ENV["CHEF_GIT_REV"] || "11.10.4"
   },
   {
     :name => "junos-ez-stdlib",
