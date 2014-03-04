@@ -44,7 +44,7 @@ CHEF_PACKAGE_ITERATION ?= 1
 #
 BASE_VERSION != echo $$CHEF_VERSION | awk -F + '{print $$1}'
 
-OS_INFO = junos.$(BSB_NAME).$(MACHINE)
+OS_INFO = junos.$(MACHINE)
 
 # Release builds should not include a timestamp/build version
 .if defined (RELEASE_BUILD) && ($(RELEASE_BUILD) == true || $(RELEASE_BUILD) == yes)
