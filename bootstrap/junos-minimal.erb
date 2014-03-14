@@ -1,0 +1,53 @@
+<%- # Chef Minimal Bootstrap Script for Junos -%>
+<%- # version: 1.0.0 -%>
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "-----> Creating required Chef configuration"
+echo "------------------------------------------------------------------------"
+echo ""
+
+<%- # Create a root directory for Chef. `/var/db/` persists between switch upgrades. -%>
+mkdir -p /var/db/chef
+
+<%- # Create the validation.pem. This is used the first time the switch checks into the Chef Server. -%>
+cat > /var/db/chef/validation.pem <<EOP
+<%= validation_key %>
+EOP
+
+<%- # Generate a Chef config file for the switch. -%>
+cat > /var/db/chef/client.rb <<EOP
+CURRENT_PATH = File.expand_path(File.dirname(__FILE__))
+
+log_level              :auto
+log_location           STDOUT
+chef_server_url        "<%= @chef_config[:chef_server_url] %>"
+validation_client_name "<%= @chef_config[:validation_client_name] %>"
+<%-  if @config[:chef_node_name] -%>
+node_name              "<%= @config[:chef_node_name] %>"
+<%-  end -%>
+
+# override these values for Junos
+client_key             File.join(CURRENT_PATH, "client.pem")
+validation_key         File.join(CURRENT_PATH, "validation.pem")
+file_cache_path        File.join(CURRENT_PATH, "cache")
+cookbook_path          File.join(CURRENT_PATH, "cookbooks")
+verbose_logging        true
+EOP
+
+<%- # This file contains the initial run list for the switch. -%>
+cat > /var/db/chef/first-boot.json <<EOP
+<%= first_boot.to_json %>
+EOP
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "-----> Performing the initial chef-client run!"
+echo "------------------------------------------------------------------------"
+echo ""
+
+/opt/sdk/chef/bin/ruby \
+/opt/sdk/chef/bin/chef-client \
+-c /var/db/chef/client.rb \
+-j /var/db/chef/first-boot.json \
+-E <%= bootstrap_environment %>
