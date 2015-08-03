@@ -330,7 +330,7 @@ class PackageGem
 
         # Add a line for the gem-level bindir
         executable_path = "gems/#{spec.name}-#{spec.version}/#{spec.bindir}/#{executable}"
-        manifest_line = "#{gem_repo_dir}/#{executable_path} store=%INSTALLDIR%/lib/ruby/gems/1.9.1/#{executable_path} mode=555 program_id=#{{program_id_index += 1}%32}"
+        manifest_line = "#{gem_repo_dir}/#{executable_path} store=%INSTALLDIR%/lib/ruby/gems/1.9.1/#{executable_path} mode=555 program_id=#{(program_id_index += 1)%32}"
         manifest_lines << manifest_line
 
         # Add a line for the top-level Rubygems bindir, we'll install
